@@ -6,4 +6,9 @@
 {% block pubdate %}
   <time datetime="2020-03-07" pubdate>March 7, 2020</time>
 {% endblock %}
-<!-- comment -->
+
+{% block content %}
+{% for obj in site.data.harvard_park_homicides %} {# for code #}
+  <p>{{obj.first_name}} {{obj.last_name}}</p>
+{% endfor %}
+{% endblock %}
