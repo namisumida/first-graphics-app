@@ -4,40 +4,125 @@
 // Import Modules
 @import '../_modules/link/link';
 
-// Box sizing partial styles:
-// Apply a natural box layout model to all elements
-*,
-*:before,
-*:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
+$width-img: 900px;
+$width-text: 617px;
+$width-title: 800px;
+$width-mobile: 500px;
+$haze: #e5e5fc;
+$heavy-haze: #DDDAF9;
+$mist: #b8b8e8;
+$heavy-mist: #a3a3de;
+$plum: #7878c9;
+$prof-plum: #5757a6;
+$dive-indigo: #414192;
+$indistop: #33337d;
+$midnight: #1f2159;
+$darkest-midnight: #222259;
+$dive-red: #d62828;
+$grey-1: #F5F6F7;
+$grey-2: #E9ECEF;
+$grey-3: #A9ACAF;
+$grey-4: #76797C;
+$grey-5: #434649;
+.article-body {
+  margin: 3rem auto;
 
-.yeogurt-info {
-  text-align: center;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+  .body-text {
+    font-family: Georgia;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin: 1.5rem 1rem 0 1rem;
+  }
+  h3 { margin: 1.5rem 1rem 1rem 1rem; }
+  .title {
+    &__text { text-align: center; }
+    &__title {
+      font-family: "ff-meta-serif-web-pro", Georgia, serif;
+      font-size: 1.75rem;
+      line-height: 1.1;
+      margin: 1.5rem 1rem 1rem 1rem;
+    }
+    &__subhead {
+      font-size: 1.125rem;
+      font-weight: 300;
+      margin: 0 1rem 1rem 1rem;
+    }
+    &__bylinedate { margin: 0.5rem 1rem 0 1rem; }
+    &__date {
+      font-size: 1rem;
+    }
+    &__byline {
+      display: block;
+      font-size: 1rem;
+      a:hover { color: $dive-red; }
+    }
+    .bullet {
+      display: none;
+      margin: 0 0.3rem;
+    }
+  }
+  .intro__illustration { margin: 2rem 0; }
+  .hybrid-ad-wrapper { margin: 3rem 0; }
+  @media screen and (min-width: 400px) {
+    .title .bullet { display: inline-block; }
+    .title__byline { display: inline; }
+  }
+  @media screen and (min-width: $width-text+32px) {
+    .body {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: $width-text;
+    }
+    h3, .body-text, .hybrid-ad-wrapper {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .title {
+      &__title {
+        font-size: 2.5rem;
+        line-height: 1.3;
+        margin: 1.5rem 1rem 1.5rem 1rem;
+      }
+      &__subhead {
+        font-size: 1.25rem;
+        margin: 0 1rem 1rem 1rem;
+      }
+    }
+  }
+  @media screen and (min-width: 40em) {
+    .intro__illustration .inside_story_caption { padding: 0.5rem 0 0 1rem; }
+  }
+  @media screen and (min-width: $width-title+32px) {
+    .title {
+      &__text {
+        margin: 0 auto;
+        max-width: $width-title;
+      }
+      &__title {
+        margin: 1.5rem auto 1.5rem auto;
+      }
+    }
+  }
+  @media screen and (min-width: $width-img+32px) {
+    .intro__illustration {
+      margin: 2rem auto;
+      max-width: $width-img;
+    }
+    .intro__illustration .inside_story_caption { padding: 0.5rem 0 0 0; }
+  }
+  @media screen and (min-width: 64em) { // dive site menu is absolute
+    margin: 5rem auto 3rem auto;
+  }
+  @media screen and (min-width: 70em) { // dive site menu is absolute
+    margin: 3rem auto;
+  }
 }
+.share-buttons {
+  margin: 0 1rem;
+  width: auto;
 
-.version {
-  font-size: 14px;
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-}
-
-.logo {
-  margin-top: 15px;
-}
-
-// Styling on warning for users on IE7 or below
-.browsehappy {
-  text-align: center;
-  margin: 0;
-  background: #fff8e2;
-  color: #000;
-  padding: 0.5em 0;
+  @media (min-width: $width-text+32px) {
+    margin: 0 auto;
+    width: $width-text;
+  }
 }

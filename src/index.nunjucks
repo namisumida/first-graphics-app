@@ -1,18 +1,18 @@
 {% extends '_layouts/base.nunjucks' %}
 
 {% import "_modules/link/link.nunjucks" as link %}
-{% block headline %}This is my headline{% endblock %}
-{% block byline %}By Nami Sumida{% endblock %}
-{% block pubdate %}
-  <time datetime="2020-03-07" pubdate>March 7, 2020</time>
-{% endblock %}
+{% block title__title %}This is my headline{% endblock %}
+{% block title__subhead %}This is my headline{% endblock %}
+{% block title__date %}April 5, 2020{% endblock %}
+{% block title__byline %}<a href="https://www.twitter.com/namisumida">Nami Sumida</a>{% endblock %}
+{% block title__byline %}Credit: Yujin Kim{% endblock %}
 
 {% block content %}
 <section>
   <h3>Lives lost in Harvard Park</h3>
   <p>The {{site.data.harvard_park_homicides.length}} homicides in Harvard Park since 2000 were primarily black and Latino males, but the list includes husbands, wives, fathers, mothers of all ages, and even some small children.</p>
   <div class="card-columns">
-    {% for obj in site.data.harvard_park_homicides %} 
+    {% for obj in site.data.harvard_park_homicides %}
       <div class="card">
           <div class="card-body">
             {% if obj.image %}

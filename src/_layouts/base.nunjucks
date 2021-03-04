@@ -3,29 +3,36 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Graphics App</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="https://bl.ocks.org/palewire/raw/1035cd306a2f85b362b1a20ce315b8eb/base.css?rev=8">
     {% block stylesheets %}{% endblock %}
 </head>
 <body>
-    <nav>
-        <a href="http://first-graphics-app.readthedocs.org/">
-            <img src="https://bl.ocks.org/palewire/raw/1035cd306a2f85b362b1a20ce315b8eb/ire-logo.png">
-        </a>
-    </nav>
-    <header>
-        <h1>{% block headline %}{% endblock %}</h1>
-        <div class="byline">
-            {% block byline %}{% endblock %}
+  <div class="article-body">
+    <section class="title">
+      <div class="title__text">
+        <h1 class="title__title">{% block title__title %}{% endblock %}</h1>
+        <div class="title__subhead">{% block title__subhead %}{% endblock %}</div>
+        <div class="title__bylinedate">
+          <span class="title__date">{% block title__date %}{% endblock %}</span>
+          <span class="bullet">&bull;</span>
+          <span class="title__byline">{% block title__byline %}{% endblock %}</span>
         </div>
-        <div class="pubdate">
-            {% block pubdate %}{% endblock %}
-        </div>
-    </header>
+      </div>
+      <figure class="inside_story intro__illustration">
+        <img src="https://www.retaildive.com/user_media/cache/67/6b/676b02ed2c7cf154eb0968c502a14ac6.jpg"></img>
+        <figcaption class="inside_story_caption">
+          <div class="source_text">{% block intro__illustration__source %}{% endblock %}</div>
+        </figcaption>
+      </figure>
+    </section>
     {% block content %}{% endblock %}
     {% block scripts %}{% endblock %}
-    <script src="scripts/main.js"></script>
+  </div>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
+
+<section class="title">
+
+
+    </section>
